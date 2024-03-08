@@ -15,6 +15,10 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
+- task: SonarCloudAnalyze@1
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+
 - script: |
     npm install
     npm run build
