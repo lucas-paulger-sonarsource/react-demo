@@ -15,11 +15,6 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'SonarCloud'
@@ -34,6 +29,13 @@ steps:
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+
 # - task: SonarCloudPrepare@1
 #   inputs:
 #     SonarCloud: 'SonarCloud'
