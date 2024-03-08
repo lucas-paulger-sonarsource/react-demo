@@ -14,18 +14,33 @@ steps:
   inputs:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
+
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'lucas-paulger-sonarsource'
-    scannerMode: 'CLI'
-    configMode: 'file'
+    scannerMode: 'MSBuild'
+    projectKey: 'lucas-paulger-sonarsource_react-demo'
+
 - task: SonarCloudAnalyze@1
   inputs:
     jdkversion: 'JAVA_HOME_17_X64'
+
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
+# - task: SonarCloudPrepare@1
+#   inputs:
+#     SonarCloud: 'SonarCloud'
+#     organization: 'lucas-paulger-sonarsource'
+#     scannerMode: 'CLI'
+#     configMode: 'file'
+# - task: SonarCloudAnalyze@1
+#   inputs:
+#     jdkversion: 'JAVA_HOME_17_X64'
+# - task: SonarCloudPublish@1
+#   inputs:
+#     pollingTimeoutSec: '300'
 
 - script: |
     npm install
