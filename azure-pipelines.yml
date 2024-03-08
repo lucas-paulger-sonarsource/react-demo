@@ -19,7 +19,7 @@ steps:
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'lucas-paulger-sonarsource'
-    scannerMode: 'MSBuild'
+    scannerMode: 'CLI'
     projectKey: 'lucas-paulger-sonarsource_react-demo'
 
 - task: SonarCloudAnalyze@1
@@ -29,11 +29,6 @@ steps:
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
 
 
 # - task: SonarCloudPrepare@1
@@ -48,4 +43,9 @@ steps:
 # - task: SonarCloudPublish@1
 #   inputs:
 #     pollingTimeoutSec: '300'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
 
