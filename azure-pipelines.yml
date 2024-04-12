@@ -34,8 +34,10 @@ steps:
     pollingTimeoutSec: '300'
 
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+- task: Npm@1
+  inputs:
+    command: 'install'
 
+- script: |
+    npm run build
+  displayName: 'npm build'
