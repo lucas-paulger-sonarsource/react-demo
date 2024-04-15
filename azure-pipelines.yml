@@ -20,10 +20,11 @@ steps:
 
   - task: SonarCloudPrepare@1
     inputs:
-      SonarCloud: "SonarCloud"
-      organization: "lucas-paulger-sonarsource"
-      scannerMode: "CLI"
-      projectKey: "lucas-paulger-sonarsource_react-demo"
+      SonarCloud: 'SonarCloud'
+      organization: 'lucas-paulger-sonarsource'
+      scannerMode: 'MSBuild'
+      projectKey: 'lucas-paulger-sonarsource_react-demo'
+      projectName: 'react-demo'
 
   - task: SonarCloudAnalyze@1
     inputs:
@@ -31,7 +32,7 @@ steps:
 
   - task: SonarCloudPublish@1
     inputs:
-      pollingTimeoutSec: "300"
+      pollingTimeoutSec: '300'
 
   - script: |
       npm install
