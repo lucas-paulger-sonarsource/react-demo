@@ -15,7 +15,7 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- task: SonarCloudPrepare@1
+- task: SonarQubePrepare@1
   inputs:
     SonarCloud: "SonarCloud"
     organization: "lucas-paulger-sonarsource"
