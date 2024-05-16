@@ -15,17 +15,14 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run build
-  displayName: "npm install and build"
-
 - task: SonarQubePrepare@5
   inputs:
     SonarQube: 'local sq instance'
-    scannerMode: 'MSBuild'
-    projectKey: 'react-demo'
-    projectName: 'React Demo'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'react-demo'
+    cliProjectName: 'React Demo'
+    cliSources: '.'
 
 - task: SonarQubeAnalyze@5
   inputs:
@@ -33,3 +30,9 @@ steps:
 - task: SonarQubePublish@5
   inputs:
     pollingTimeoutSec: '300'
+
+# this would go first, but I care more that the SQ tasks pass
+- script: |
+    npm install
+    npm run build
+  displayName: "npm install and build"
