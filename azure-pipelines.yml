@@ -28,8 +28,6 @@ steps:
       cliProjectKey: 'lucas-paulger-sonarsource_react-demo'
       cliProjectName: 'react-demo'
       cliSources: '.'
-      extraProperties: |
-        sonar.verbose=true'
 
   - task: SonarCloudAnalyze@1
     inputs:
