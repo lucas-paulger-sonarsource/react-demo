@@ -17,7 +17,6 @@ steps:
     inputs:
       versionSpec: "18.x"
     displayName: "Install Node.js"
-
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'SonarCloud'
@@ -27,6 +26,7 @@ steps:
       configMode: 'manual'
       cliProjectKey: 'lucas-paulger-sonarsource_react-demo'
       cliProjectName: 'react-demo'
+
 
   - task: SonarCloudAnalyze@1
     inputs:
