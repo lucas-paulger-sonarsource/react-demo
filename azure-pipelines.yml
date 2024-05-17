@@ -23,8 +23,13 @@ steps:
       SonarCloud: 'SonarCloud'
       organization: 'lucas-paulger-sonarsource'
       scannerMode: 'CLI'
-      projectKey: 'lucas-paulger-sonarsource_react-demo'
-      projectName: 'react-demo'
+      cliVersion: '5.0.1.3006'
+      configMode: 'manual'
+      cliProjectKey: 'lucas-paulger-sonarsource_react-demo'
+      cliProjectName: 'react-demo'
+      cliSources: '.'
+      extraProperties: |
+        sonar.verbose=true'
 
   - task: SonarCloudAnalyze@1
     inputs:
