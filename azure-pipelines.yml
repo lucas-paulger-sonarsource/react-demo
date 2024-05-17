@@ -27,7 +27,6 @@ steps:
       configMode: 'manual'
       cliProjectKey: 'lucas-paulger-sonarsource_react-demo'
       cliProjectName: 'react-demo'
-      cliSources: '.'
 
   - task: SonarCloudAnalyze@1
     inputs:
