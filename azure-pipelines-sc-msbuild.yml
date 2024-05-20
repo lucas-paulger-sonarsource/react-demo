@@ -20,13 +20,12 @@ steps:
 
   - task: SonarCloudPrepare@1
     inputs:
-      SonarCloud: "SonarCloud"
-      organization: "lucas-paulger-sonarsource"
-      scannerMode: "MSBuild"
-      msBuildVersion: "5.15.1.88158"
-      configMode: "manual"
-      cliProjectKey: "lucas-paulger-sonarsource_react-demo"
-      cliProjectName: "react-demo"
+      SonarCloud: 'SonarCloud'
+      organization: 'lucas-paulger-sonarsource'
+      scannerMode: 'MSBuild'
+      msBuildVersion: '5.15.1.88158'
+      projectKey: 'lucas-paulger-sonarsource_react-demo'
+      projectName: 'react-demo'
 
   - task: SonarCloudAnalyze@1
     inputs:
