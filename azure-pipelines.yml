@@ -23,7 +23,7 @@ steps:
       SonarCloud: 'SonarCloud'
       organization: 'lucas-paulger-sonarsource'
       scannerMode: 'CLI'
-      cliVersion: '2.9.0.670'
+      cliVersion: '5.0.1.3006'
       configMode: 'manual'
       cliProjectKey: 'lucas-paulger-sonarsource_react-demo'
       cliProjectName: 'react-demo'
