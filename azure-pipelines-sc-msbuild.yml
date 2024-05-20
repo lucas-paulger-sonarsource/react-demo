@@ -23,7 +23,6 @@ steps:
       SonarCloud: 'SonarCloud'
       organization: 'lucas-paulger-sonarsource'
       scannerMode: 'MSBuild'
-      msBuildVersion: '6.2.0.85879'
       projectKey: 'lucas-paulger-sonarsource_react-demo'
       projectName: 'react-demo'
 
