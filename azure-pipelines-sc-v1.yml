@@ -18,7 +18,7 @@ steps:
       versionSpec: "18.x"
     displayName: "Install Node.js"
 
-  - task: SonarCloudPrepare@2
+  - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'SonarCloud'
       organization: 'lucas-paulger-sonarsource'
@@ -26,11 +26,11 @@ steps:
       projectKey: 'lucas-paulger-sonarsource_react-demo'
       projectName: 'react-demo'
 
-  - task: SonarCloudAnalyze@2
+  - task: SonarCloudAnalyze@1
     inputs:
       jdkversion: "JAVA_HOME_17_X64"
 
-  - task: SonarCloudPublish@2
+  - task: SonarCloudPublish@1
     inputs:
       pollingTimeoutSec: "300"
 
