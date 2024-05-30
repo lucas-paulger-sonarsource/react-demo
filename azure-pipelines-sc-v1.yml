@@ -12,13 +12,16 @@ steps:
       versionSpec: "18.x"
     displayName: "Install Node.js"
 
-  - task: SonarCloudPrepare@1
+  - task: SonarCloudPrepare@2
     inputs:
       SonarCloud: 'SonarCloud'
       organization: 'lucas-paulger-sonarsource'
-      scannerMode: 'MSBuild'
-      projectKey: 'lucas-paulger-sonarsource_react-demo'
-      projectName: 'react-demo'
+      scannerMode: 'CLI'
+      cliVersion: '5.0.1.3006'
+      configMode: 'manual'
+      cliProjectKey: 'lucas-paulger-sonarsource_react-demo'
+      cliProjectName: 'react-demo'
+      cliSources: '.'
 
   - task: SonarCloudAnalyze@1
     inputs:
