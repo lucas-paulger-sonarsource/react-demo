@@ -12,7 +12,7 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- task: SonarQubePrepare@5
+- task: SonarQubePrepare@6
   inputs:
     SonarQube: 'local sq instance'
     scannerMode: 'CLI'
@@ -21,11 +21,11 @@ steps:
     cliProjectName: 'React Demo'
     cliSources: '.'
 
-- task: SonarQubeAnalyze@5
+- task: SonarQubeAnalyze@6
   inputs:
     jdkversion: 'JAVA_HOME_17_X64'
 
-- task: SonarQubePublish@5
+- task: SonarQubePublish@6
   inputs:
     pollingTimeoutSec: '300'
 
