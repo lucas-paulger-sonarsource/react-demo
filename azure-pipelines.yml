@@ -17,11 +17,11 @@ steps:
       SonarCloud: 'SonarCloud'
       organization: 'lucas-paulger-sonarsource'
       scannerMode: 'CLI'
+      cliVersion: '6.0.0.4432'
       configMode: 'manual'
       cliProjectKey: 'lucas-paulger-sonarsource_react-demo'
       cliProjectName: 'react-demo'
       cliSources: '.'
-
   - task: SonarCloudAnalyze@2
     inputs:
       jdkversion: 'JAVA_HOME_17_X64'
