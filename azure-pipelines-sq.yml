@@ -17,6 +17,7 @@ steps:
     SonarQube: 'local sq instance'
     scannerMode: 'CLI'
     configMode: 'manual'
+    cliVersion: '6.0.0.4432'
     cliProjectKey: 'react-demo'
     cliProjectName: 'React Demo'
     cliSources: '.'
