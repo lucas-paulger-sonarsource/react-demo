@@ -3,6 +3,7 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+trigger: none
 pool:
   vmImage: ubuntu-latest
 
@@ -27,6 +28,7 @@ steps:
     cliSources: '.'
     extraProperties: |
       sonar.token=sqa_695aa8e50fb5c1b679c34ab3b999854a1d72b833
+      sonar.scanner.skipJreProvisioning=true
 
 - task: SonarQubeAnalyze@7
   inputs:
