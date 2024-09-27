@@ -25,6 +25,8 @@ steps:
     configMode: 'manual'
     cliProjectKey: 'react-demo_react-demo_7f9c8aba-6527-485f-882b-ff6f6d3890f4'
     cliSources: '.'
+    extraProperties: |
+      sonar.token=sqa_695aa8e50fb5c1b679c34ab3b999854a1d72b833
 
 - task: SonarQubeAnalyze@7
   inputs:
