@@ -1,0 +1,41 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    echo Unsetting JAVA_HOME_17_X64
+    set JAVA_HOME_17_X64=
+    echo JAVA_HOME_17_X64 is now: %JAVA_HOME_17_X64%
+  displayName: 'Emulate non-set JAVA_HOME_17_X64'
+
+- task: SonarQubePrepare@6
+  inputs:
+    SonarQube: 'local sq instance'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'react-demo'
+    cliSources: '.'
+
+- task: SonarQubeAnalyze@6
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+
+- task: SonarQubePublish@6
+  inputs:
+    pollingTimeoutSec: '300'
+
+# this would go first, but I care more that the SQ tasks pass
+- script: |
+    npm install
+    npm run build
+  displayName: "npm install and build"
