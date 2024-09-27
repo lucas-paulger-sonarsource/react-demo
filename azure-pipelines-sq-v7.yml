@@ -23,7 +23,7 @@ steps:
     SonarQube: 'local sq instance'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'react-demo'
+    cliProjectKey: 'react-demo_react-demo_7f9c8aba-6527-485f-882b-ff6f6d3890f4'
     cliSources: '.'
 
 - task: SonarQubeAnalyze@7
