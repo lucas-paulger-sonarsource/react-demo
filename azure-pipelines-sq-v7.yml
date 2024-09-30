@@ -7,17 +7,14 @@ trigger: none
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  JAVA_HOME_17_X64: ''
+
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
-
-- script: |
-    echo "Unsetting JAVA_HOME_17_X64"
-    unset JAVA_HOME_17_X64
-    echo "JAVA_HOME_17_X64 is unset"
-  displayName: 'Unset JAVA_HOME_17_X64'
 
 - task: SonarQubePrepare@7
   inputs:
