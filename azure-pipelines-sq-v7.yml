@@ -14,10 +14,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo Unsetting JAVA_HOME_17_X64
-    set JAVA_HOME_17_X64=
-    echo JAVA_HOME_17_X64 is now: %JAVA_HOME_17_X64%
-  displayName: 'Emulate non-set JAVA_HOME_17_X64'
+    echo "Unsetting JAVA_HOME_17_X64"
+    unset JAVA_HOME_17_X64
+    echo "JAVA_HOME_17_X64 is unset"
+  displayName: 'Unset JAVA_HOME_17_X64'
 
 - task: SonarQubePrepare@7
   inputs:
